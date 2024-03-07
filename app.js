@@ -18,3 +18,4 @@ function sortear () { // puxando os Ids para dentro do javascript
 function obterNumeroAleatorio (min,max) {
    return Math.floor(Math.random() * (max - min + 1)) + min; // Math.floor arredonda os numeros
 }
+
