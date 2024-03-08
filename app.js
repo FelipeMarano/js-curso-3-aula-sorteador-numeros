@@ -3,15 +3,18 @@ function sortear () { // puxando os Ids para dentro do javascript
     let de = parseInt(document.getElementById ("de").value); // parseInt para vir somente numero
     let ate = parseInt (document.getElementById ("ate").value);
     
-    let sorteados = []; 
+    let sorteados = []; // array
     let numero; 
     // fazer um "loop for"
     for (let i = 0; i < quantidade; i++) { // começa com 0; enquanto ela for menor que a "quantidade", continua e ; vai aumentando
         numero = obterNumeroAleatorio (de,ate);
-        sorteados.push(numero);
+        while (sorteados.includes(numero)); // repetir o codigo se a condição for verdadeira; includes: devolve true or false
+            numero = obterNumeroAleatorio (de,ate);
+        sorteados.push(numero); // para guardar dentro do array
     }
 
-    alert (sorteados)
+    let resultado = document.getElementById ("resultado"); // para pegar o "resultado" do index
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`; // para colocar no HTML e concatenar
     
 }
 
